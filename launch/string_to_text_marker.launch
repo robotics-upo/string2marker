@@ -1,21 +1,23 @@
 <launch>
-  <arg name="marker_size"     default="1.0"/>
-  <arg name="marker_pos_x"    default="0.0"/>
-  <arg name="marker_pos_y"    default="0.0"/>
-  <arg name="marker_pos_z"    default="0.0"/>
-  <arg name="marker_color_r"  default="0.0"/>
-  <arg name="marker_color_g"  default="1.0"/>
-  <arg name="marker_color_b"  default="0.0"/>
-  <arg name="marker_color_a"  default="1.0"/>
+  <arg name="marker_ref_frame"  default="map"/>
+  <arg name="marker_size"       default="1.0"/>
+  <arg name="marker_pos_x"      default="0.0"/>
+  <arg name="marker_pos_y"      default="0.0"/>
+  <arg name="marker_pos_z"      default="0.0"/>
+  <arg name="marker_color_r"    default="0.0"/>
+  <arg name="marker_color_g"    default="1.0"/>
+  <arg name="marker_color_b"    default="0.0"/>
+  <arg name="marker_color_a"    default="1.0"/>
   
   <node name="string_to_text_marker" pkg="string2marker" type="string_to_text_marker" required="false" output="screen">
-    <param name="marker_size"     value="$(arg marker_size)"/>
-    <param name="marker_color_r"  value="$(arg marker_color_r)"/>
-    <param name="marker_color_g"  value="$(arg marker_color_g)"/>
-    <param name="marker_color_b"  value="$(arg marker_color_b)"/>
-    <param name="marker_color_a"  value="$(arg marker_color_a)"/>
-    <param name="marker_pos_x"    value="$(arg marker_pos_x)"/>
-    <param name="marker_pos_y"    value="$(arg marker_pos_y)"/>
-    <param name="marker_pos_z"    value="$(arg marker_pos_z)"/>
+    <param name="marker_ref_frame"    value="$(arg marker_ref_frame)"/>
+    <param name="marker_size"         value="$(arg marker_size)"/>
+    <param name="marker_color_r"      value="$(arg marker_color_r)"/>
+    <param name="marker_color_g"      value="$(arg marker_color_g)"/>
+    <param name="marker_color_b"      value="$(arg marker_color_b)"/>
+    <param name="marker_color_a"      value="$(arg marker_color_a)"/>
+    <param name="marker_pos_x"        value="$(arg marker_pos_x)"/>
+    <param name="marker_pos_y"        value="$(arg marker_pos_y)"/>
+    <param name="marker_pos_z"        value="$(arg marker_pos_z)"/>
   </node>
 </launch>

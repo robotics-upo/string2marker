@@ -20,6 +20,7 @@ int main( int argc, char** argv )
     marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
     // Read params
+    std::string marker_ref_frame = n_private.param("marker_ref_frame", std::string("map"));
     double marker_size = n_private.param("marker_size", 1.0);
     double marker_pos_x = n_private.param("marker_pos_x", 0.0);
     double marker_pos_y = n_private.param("marker_pos_y", 0.0);
@@ -30,7 +31,7 @@ int main( int argc, char** argv )
     double marker_color_a = n_private.param("marker_color_a", 1.0);
 
     // Pre-define marker
-    marker.header.frame_id = "map";
+    marker.header.frame_id = marker_ref_frame;
     marker.header.stamp = ros::Time::now();
     marker.ns = "string2marker";
     marker.id = 0;
